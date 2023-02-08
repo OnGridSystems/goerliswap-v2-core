@@ -3,6 +3,8 @@ require('hardhat-deploy')
 require('hardhat-deploy')
 require('hardhat-deploy-ethers')
 
+// require("tasks/add-liquidity.js");
+
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const accounts = {
@@ -69,6 +71,7 @@ module.exports = {
     },
 
     hardhat: {
+      accounts,
       mining: {
         auto: false,
         interval: 3000
