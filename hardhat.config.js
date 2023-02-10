@@ -29,7 +29,29 @@ module.exports = {
           }
         }
       }
-    ]
+    ],
+    overrides: {
+      'contracts/UniswapV2Factory.sol': {
+        version: '0.5.16',
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 999999
+          },
+          evmVersion: 'istanbul'
+        }
+      },
+      'contracts/UniswapV2Pair.sol': {
+        version: '0.5.16',
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 999999
+          },
+          evmVersion: 'istanbul'
+        }
+      }
+    }
   },
   namedAccounts: {
     deployer: {
@@ -47,10 +69,10 @@ module.exports = {
     },
 
     hardhat: {
-      accounts,
-      live: false,
-      saveDeployments: true,
-      tags: ['test', 'local']
+      mining: {
+        auto: false,
+        interval: 3000
+      }
     },
 
     goerli: {
